@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "mocha",
+    "node"
+  ],
+  "globals": {
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "request": true,
+    "before": true,
+    "beforeEach": true,
+    "after": true,
+    "afterEach": true,
+    "mockery": true,
+    "sinon": true,
+    "td": true
+  },
+  "rules": {
+    "node/shebang": [
+      "error",
+      {
+        "convertPath": {
+          "src/app.js": [
+            "src/app.js",
+            "bin/random-useragent.js"
+          ]
+        }
+      }
+    ]
+  }
+}
