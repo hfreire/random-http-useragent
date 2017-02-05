@@ -24,9 +24,9 @@ const program = require('commander')
 program
   .version('1.0.0')
 
-const RandomUserAgent = require('../lib')
+const RandomHTTPUserAgent = require('../lib')
 
-RandomUserAgent.get()
+RandomHTTPUserAgent.get()
   .then((userAgent) => {
     console.log(userAgent)
   })

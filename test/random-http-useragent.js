@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-describe('random-useragent', () => {
+describe('random-http-useragent', () => {
   let subject
 
   afterEach(() => {
@@ -14,7 +14,7 @@ describe('random-useragent', () => {
 
   describe('when getting random user-agent', () => {
     before(() => {
-      subject = require('../src/random-useragent')
+      subject = require('../src/random-http-useragent')
     })
 
     it('should fulfill promise', () => {

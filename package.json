@@ -1,21 +1,21 @@
 {
-  "name": "random-useragent",
-  "description": "Get a random and legit user-agent for your HTTP clients",
+  "name": "random-http-useragent",
+  "description": "Get a random and legit user-agent for your HTTP client",
   "version": "1.0.0",
   "main": "lib/index.js",
   "bin": {
-    "random-useragent": "bin/random-useragent.js"
+    "random-http-useragent": "bin/random-http-useragent.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hfreire/random-useragent.git"
+    "url": "git+https://github.com/hfreire/random-http-useragent.git"
   },
   "author": "Hugo Freire <hugo@exec.sh>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hfreire/random-useragent/issues"
+    "url": "https://github.com/hfreire/random-http-useragent/issues"
   },
-  "homepage": "https://github.com/hfreire/random-useragent#readme",
+  "homepage": "https://github.com/hfreire/random-http-useragent#readme",
   "dependencies": {
     "bluebird": "^3.4.7"
   },
@@ -43,7 +43,7 @@
     "coverage": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive test",
     "test": "npm run lint && npm run coverage",
     "clean": "rm -rf bin lib coverage",
-    "compile": "mkdir -p bin lib && ./node_modules/.bin/babel -o lib/index.js src/random-useragent.js && ./node_modules/.bin/babel -o bin/random-useragent.js src/app.js",
+    "compile": "mkdir -p bin lib && ./node_modules/.bin/babel -o lib/index.js src/random-http-useragent.js && ./node_modules/.bin/babel -o bin/random-http-useragent.js src/app.js",
     "prepublish": "npm run compile",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   }
