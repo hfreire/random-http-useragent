@@ -12,7 +12,7 @@ describe('random-http-useragent', () => {
     td.reset()
   })
 
-  describe('when getting random user-agent', () => {
+  describe('when getting a random user-agent', () => {
     before(() => {
       subject = require('../src/random-http-useragent')
     })
@@ -23,10 +23,26 @@ describe('random-http-useragent', () => {
       return result.should.be.fulfilled
     })
 
-    it('should get user-agent', () => {
+    it('should be a string', () => {
       return subject.get()
         .then((userAgent) => {
           userAgent.should.be.a('string')
+        })
+    })
+  })
+
+  describe('when getting multiple random user-agents', () => {
+    before(() => {
+      subject = require('../src/random-http-useragent')
+    })
+
+    it('should be different', () => {
+      return subject.get()
+        .then((firstUserAgent) => {
+          return subject.get()
+            .then((secondUserAgent) => {
+              firstUserAgent.should.not.be.equal(secondUserAgent)
+            })
         })
     })
   })
