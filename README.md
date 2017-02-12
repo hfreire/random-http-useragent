@@ -12,7 +12,8 @@
 Stores and randomly accesses a HTTP user agent from an available list of user agents in disk.
 
 ### Features
-* HTTP user agents are stored :floppy_disk: in a disk file to avoid filling up your app's memory space. :white_check_mark:  
+* Randomly :zap: pick between 899 unique user agents :white_check_mark: 
+* HTTP user agents are stored :floppy_disk: in a disk file to avoid filling up your app's memory space :white_check_mark:  
 * File disk reads are optimized :running: to only read as much as needed :white_check_mark:
 * Supports [Bluebird](https://github.com/petkaantonov/bluebird) :bird: promises :white_check_mark:
 
