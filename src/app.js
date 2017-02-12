@@ -7,22 +7,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-process.on('uncaughtException', error => {
+process.on('uncaughtException', (error) => {
   console.error(error)
 
   process.exit(1)
 })
 
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error) => {
   console.error(error)
 
   process.exit(1)
 })
+
+const path = require('path')
 
 const program = require('commander')
 
-program
-  .version('1.0.0')
+const version = require(path.join(__dirname, '../package')).version
+
+program.version(version)
 
 const RandomHTTPUserAgent = require('../lib')
 
