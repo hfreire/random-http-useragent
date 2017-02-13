@@ -79,7 +79,7 @@ describe('app', () => {
     })
   })
 
-  describe('when failing to return random user-agent', () => {
+  describe('when failing to return random user-agent because of error', () => {
     const _error = new Error('my-error-message')
 
     beforeEach(() => {
