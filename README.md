@@ -39,4 +39,5 @@ RandomUserAgent.get()
 ```
 
 ### Used by
+*  [browser-as-a-service](https://github.com/hfreire/browser-as-a-service) - A web browser :earth_americas: hosted as a service, to render your JavaScript web pages as HTML
 *  [make-porto-win-european-best-destination-2017](https://github.com/hfreire/make-porto-win-european-best-destination-2017) - Let's make :city_sunrise: Porto :trophy: win the :euro: European Best Destination :tada: 2017
