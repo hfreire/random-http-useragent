@@ -37,3 +37,6 @@ RandomUserAgent.get()
   .then((userAgent) => console.log(userAgent))
   .catch((error) => console.error(error.message))
 ```
+
+### Used by
+*  [make-porto-win-european-best-destination-2017](https://github.com/hfreire/make-porto-win-european-best-destination-2017) - Let's make :city_sunrise: Porto :trophy: win the :euro: European Best Destination :tada: 2017
