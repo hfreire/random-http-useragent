@@ -49,7 +49,7 @@
     "lint": "node_modules/.bin/eslint .",
     "coverage": "node_modules/.bin/istanbul cover --include-all-sources --root src --print detail ./node_modules/mocha/bin/_mocha -- --recursive test",
     "test": "npm run lint && npm run coverage",
-    "compile": "npm run clean && mkdir -p lib && ./node_modules/.bin/babel src/ -d lib",
+    "compile": "npm run clean && mkdir -p bin lib && ./node_modules/.bin/babel src/ -d lib && mv lib/app.js bin/app.js",
     "prepublish": "npm run compile",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "semantic-release": "./node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post",
