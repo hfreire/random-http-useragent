@@ -27,7 +27,7 @@
         "convertPath": {
           "src/app.js": [
             "src/app.js",
-            "bin/random-http-useragent.js"
+            "bin/app.js"
           ]
         }
       }
