@@ -7,12 +7,48 @@
 
 describe('random-http-useragent', () => {
   let subject
+  let memoizee
 
-  afterEach(() => {
-    td.reset()
+  before(() => {
+    memoizee = td.function()
+  })
+
+  afterEach(() => td.reset())
+
+  describe('when configuring', () => {
+    const maxAge = 10
+    const options = { maxAge }
+    const cachedReadRandomLine = td.function()
+
+    beforeEach(() => {
+      td.replace('memoizee', memoizee)
+      td.when(memoizee(), { ignoreExtraArgs: true }).thenReturn(cachedReadRandomLine)
+
+      subject = require('../src/random-http-useragent')
+    })
+
+    it('should memoizee read random line function', () => {
+      td.verify(memoizee(), { ignoreExtraArgs: true, times: 1 })
+    })
+
+    it('should memoizee with a max age of 10 milliseconds', () => {
+      const captor = td.matchers.captor()
+
+      subject.configure(options)
+
+      td.verify(memoizee(td.matchers.anything(), captor.capture()), { ignoreExtraArgs: true })
+
+      const _options = captor.value
+
+      _options.should.have.property('maxAge')
+      _options.maxAge.should.be.equal(maxAge)
+    })
   })
 
   describe('when getting a random user-agent', () => {
+    const maxAge = 10
+    const options = { maxAge }
+
     before(() => {
       subject = require('../src/random-http-useragent')
     })
@@ -29,11 +65,30 @@ describe('random-http-useragent', () => {
           userAgent.should.be.a('string')
         })
     })
+
+    it('should cache result for 10 milliseconds', () => {
+      subject.configure(options)
+
+      return subject.get()
+        .then((firstUserAgent) => {
+          return subject.get()
+            .then((secondUserAgent) => {
+              firstUserAgent.should.be.equal(secondUserAgent)
+            })
+            .delay(10)
+            .then(() => subject.get())
+            .then((thirdUserAgent) => {
+              firstUserAgent.should.not.be.equal(thirdUserAgent)
+            })
+        })
+    })
   })
 
   describe('when getting multiple random user-agents', () => {
     before(() => {
       subject = require('../src/random-http-useragent')
+
+      subject.configure()
     })
 
     it('should be different', () => {

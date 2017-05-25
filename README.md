@@ -15,6 +15,7 @@ Stores and randomly accesses a HTTP user agent from an available list of user ag
 * Randomly :zap: pick between 899 unique user agents :white_check_mark: 
 * HTTP user agents are stored :floppy_disk: in a disk file to avoid filling up your app's memory space :white_check_mark:  
 * File disk reads are optimized :running: to only read as much as needed :white_check_mark:
+* Cache results using [memoizee](https://github.com/medikoo/memoizee) :white_check_mark:
 * Supports [Bluebird](https://github.com/petkaantonov/bluebird) :bird: promises :white_check_mark:
 
 ### How to install
@@ -30,8 +31,20 @@ random-http-useragent
 ```
 
 #### Use it in your app
+Get a random user agent
 ```javascript
 const RandomUserAgent = require('random-http-useragent')
+
+RandomUserAgent.get()
+  .then((userAgent) => console.log(userAgent))
+  .catch((error) => console.error(error.message))
+```
+
+Cache returned user agents for 2 minutes
+```javascript
+const RandomUserAgent = require('random-http-useragent')
+
+RandomUserAgent.configure({ maxAge: 120000 })
 
 RandomUserAgent.get()
   .then((userAgent) => console.log(userAgent))

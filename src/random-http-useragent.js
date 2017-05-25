@@ -7,6 +7,8 @@
 
 const Promise = require('bluebird')
 
+const memoizee = require('memoizee')
+
 const createReadStream = require('fs').createReadStream
 const path = require('path')
 
@@ -14,8 +16,6 @@ const USERAGENTS_FILE = path.join(__dirname, '/../share/user-agents.txt')
 const TOTAL_USERAGENTS = 899
 
 const readLineNumber = (number, callback) => {
-  const n = number
-
   const stream = createReadStream(USERAGENTS_FILE, {
     flags: 'r',
     encoding: 'utf-8',
@@ -30,13 +30,11 @@ const readLineNumber = (number, callback) => {
 
     const lines = d.split('\n')
 
-    if (lines.length >= +n) {
+    /* istanbul ignore else  */
+    if (lines.length >= number) {
       stream.destroy()
 
-      const line = lines[ +n ]
-      if (!line) {
-        throw new Error('Found empty line')
-      }
+      const line = lines[ number ]
 
       callback(null, line)
     } else {
@@ -48,24 +46,43 @@ const readLineNumber = (number, callback) => {
   stream.on('end', () => callback(new Error('EOF reached without finding an user-agent')))
 }
 
-const getRandomNumberBetween = (min, max) => {
+const generateRandomNumberBetween = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-class RandomUserAgent {
-  static get () {
-    return new Promise((resolve, reject) => {
-      const number = getRandomNumberBetween(0, TOTAL_USERAGENTS - 1)
+const readRandomLine = () => {
+  return new Promise((resolve, reject) => {
+    const number = generateRandomNumberBetween(0, TOTAL_USERAGENTS - 1)
 
-      readLineNumber(number, (error, userAgent) => {
-        if (error) {
-          return reject(error)
-        }
+    readLineNumber(number, (error, userAgent) => {
+      if (error) {
+        return reject(error)
+      }
 
-        resolve(userAgent)
-      })
+      resolve(userAgent)
     })
+  })
+}
+
+class RandomUserAgent {
+  constructor (options = {}) {
+    this.configure(options)
+  }
+
+  configure (options = {}) {
+    this._options = options
+
+    this._options.promise = true
+    if (!this._options.maxAge) {
+      this._options.maxAge = -1
+    }
+
+    this._cachedReadRandomLine = memoizee(readRandomLine, this._options)
+  }
+
+  get () {
+    return this._options.maxAge < 0 ? readRandomLine() : this._cachedReadRandomLine()
   }
 }
 
-module.exports = RandomUserAgent
+module.exports = new RandomUserAgent()

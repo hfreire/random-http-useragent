@@ -896,4 +896,4 @@ Opera/9.80 (Windows NT 6.0; U; en) Presto/2.2.15 Version/10.00
 Opera/9.80 (Windows NT 6.0; U; de) Presto/2.2.15 Version/10.00
 Opera/9.80 (Windows NT 5.2; U; en) Presto/2.2.15 Version/10.00
 Opera/9.80 (Windows NT 5.1; U; zh-cn) Presto/2.2.15 Version/10.00
-Opera/9.80 (Windows NT 5.1; U; ru) Presto/2.2.15 Version/10.00'
+Opera/9.80 (Windows NT 5.1; U; ru) Presto/2.2.15 Version/10.00
