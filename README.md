@@ -33,20 +33,20 @@ random-http-useragent
 #### Use it in your app
 Get a random user agent
 ```javascript
-const RandomUserAgent = require('random-http-useragent')
+const RandomHttpUserAgent = require('random-http-useragent')
 
-RandomUserAgent.get()
+RandomHttpUserAgent.get()
   .then((userAgent) => console.log(userAgent))
   .catch((error) => console.error(error.message))
 ```
 
 Cache returned user agents for 2 minutes
 ```javascript
-const RandomUserAgent = require('random-http-useragent')
+const RandomHttpUserAgent = require('random-http-useragent')
 
-RandomUserAgent.configure({ maxAge: 120000 })
+RandomHttpUserAgent.configure({ maxAge: 120000 })
 
-RandomUserAgent.get()
+RandomHttpUserAgent.get()
   .then((userAgent) => console.log(userAgent))
   .catch((error) => console.error(error.message))
 ```

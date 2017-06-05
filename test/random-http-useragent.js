@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-describe('random-http-useragent', () => {
+describe('Random HTTP User-Agent', () => {
   let subject
   let memoizee
 
@@ -45,7 +45,7 @@ describe('random-http-useragent', () => {
     })
   })
 
-  describe('when getting a random user-agent', () => {
+  describe('when getting a random http user-agent', () => {
     const maxAge = 10
     const options = { maxAge }
 
@@ -84,7 +84,7 @@ describe('random-http-useragent', () => {
     })
   })
 
-  describe('when getting multiple random user-agents', () => {
+  describe('when getting multiple random http user-agents', () => {
     before(() => {
       subject = require('../src/random-http-useragent')
 

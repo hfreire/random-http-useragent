@@ -64,7 +64,7 @@ const readRandomLine = () => {
   })
 }
 
-class RandomUserAgent {
+class RandomHttpUserAgent {
   constructor (options = {}) {
     this.configure(options)
   }
@@ -85,4 +85,4 @@ class RandomUserAgent {
   }
 }
 
-module.exports = new RandomUserAgent()
+module.exports = new RandomHttpUserAgent()
