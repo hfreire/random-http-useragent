@@ -18,7 +18,7 @@
   "homepage": "https://github.com/hfreire/random-http-useragent#readme",
   "dependencies": {
     "bluebird": "3.5.0",
-    "memoizee": "0.4.6"
+    "memoizee": "0.4.7"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
