@@ -1,11 +1,11 @@
-#!/usr/bin/env node
-
 /*
  * Copyright (c) 2017, Hugo Freire <hugo@exec.sh>.
  *
  * This source code is licensed under the license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+#!/usr/bin/env node
 
 process.on('uncaughtException', (error) => {
   console.error(error)
@@ -19,11 +19,11 @@ process.on('unhandledRejection', (error) => {
   process.exit(1)
 })
 
-const path = require('path')
+const { join } = require('path')
 
 const program = require('commander')
 
-const version = require(path.join(__dirname, '../package')).version
+const { version } = require(join(__dirname, '../package'))
 
 program.version(version)
 
