@@ -9,7 +9,7 @@
 [![Version](https://img.shields.io/npm/v/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent)
 [![Downloads](https://img.shields.io/npm/dt/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent) 
 
-Stores and randomly accesses a HTTP user agent from an available list of user agents in disk.
+> Stores and randomly accesses a HTTP user agent from an available list of user agents in disk.
 
 ### Features
 * Randomly :zap: pick between 899 unique user agents :white_check_mark: 
