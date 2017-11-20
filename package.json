@@ -18,7 +18,7 @@
   "homepage": "https://github.com/hfreire/random-http-useragent#readme",
   "dependencies": {
     "bluebird": "3.5.1",
-    "memoizee": "0.4.6"
+    "memoizee": "0.4.11"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
@@ -27,7 +27,7 @@
     "chai-as-promised": "7.1.1",
     "coveralls": "2.13.3",
     "eslint": "4.10.0",
-    "eslint-config-hfreire": "1.0.8",
+    "eslint-config-hfreire": "1.0.9",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.11.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-unicorn": "2.1.2",
     "istanbul": "0.4.5",
     "mocha": "4.0.1",
-    "pre-git": "3.15.3",
+    "pre-git": "3.16.0",
     "semantic-release": "9.1.0",
     "testdouble": "3.2.6"
   },
