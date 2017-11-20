@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+const _ = require('lodash')
 const Promise = require('bluebird')
 
 const memoizee = require('memoizee')
@@ -64,24 +65,24 @@ const readRandomLine = () => {
   })
 }
 
+const defaultOptions = {
+  promise: true,
+  memoizee: {}
+}
+
 class RandomHttpUserAgent {
   constructor (options = {}) {
     this.configure(options)
   }
 
   configure (options = {}) {
-    this._options = options
+    this._options = _.defaultsDeep({}, options, defaultOptions)
 
-    this._options.promise = true
-    if (!this._options.maxAge) {
-      this._options.maxAge = -1
-    }
-
-    this._cachedReadRandomLine = memoizee(readRandomLine, this._options)
+    this._cachedReadRandomLine = memoizee(readRandomLine, _.get(this._options, 'memoizee'))
   }
 
   get () {
-    return this._options.maxAge < 0 ? readRandomLine() : this._cachedReadRandomLine()
+    return _.has(this._options, 'memoizee.maxAge') ? this._cachedReadRandomLine() : readRandomLine()
   }
 }
 

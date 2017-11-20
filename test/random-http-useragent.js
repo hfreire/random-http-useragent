@@ -17,7 +17,7 @@ describe('Random HTTP User-Agent', () => {
 
   describe('when configuring', () => {
     const maxAge = 10
-    const options = { maxAge }
+    const options = { memoizee: { maxAge } }
     const cachedReadRandomLine = td.function()
 
     beforeEach(() => {
@@ -47,7 +47,7 @@ describe('Random HTTP User-Agent', () => {
 
   describe('when getting a random http user-agent', () => {
     const maxAge = 10
-    const options = { maxAge }
+    const options = { memoizee: { maxAge } }
 
     before(() => {
       subject = require('../src/random-http-useragent')
