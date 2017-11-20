@@ -44,7 +44,7 @@ Cache returned user agents for 2 minutes
 ```javascript
 const RandomHttpUserAgent = require('random-http-useragent')
 
-RandomHttpUserAgent.configure({ maxAge: 120000 })
+RandomHttpUserAgent.configure({ memoizee: { maxAge: 120000 } })
 
 RandomHttpUserAgent.get()
   .then((userAgent) => console.log(userAgent))
