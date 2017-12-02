@@ -2,6 +2,9 @@
   "name": "random-http-useragent",
   "description": "Get a random and legit user-agent for your HTTP client",
   "version": "0.0.0",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
   "main": "lib/index.js",
   "bin": {
     "random-http-useragent": "bin/app.js"
@@ -44,7 +47,8 @@
   },
   "config": {
     "pre-git": {
-      "commit-msg": "conventional"
+      "commit-msg": "conventional",
+      "allow-untracked-files": true
     }
   },
   "release": {
