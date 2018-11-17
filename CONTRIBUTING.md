@@ -11,7 +11,7 @@ git clone https://github.com/my-github-username/random-http-useragent
 
 Change current directory
 ```
-cd get-me-date
+cd random-http-useragent
 ```
 
 Install NPM dependencies
