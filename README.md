@@ -1,16 +1,16 @@
 # Get a random and legit user-agent :shipit: for your HTTP client
 
-[![Build Status](https://travis-ci.org/hfreire/random-http-useragent.svg?branch=master)](https://travis-ci.org/hfreire/random-http-useragent)
+[![](https://github.com/hfreire/random-http-useragent/workflows/ci/badge.svg)](https://github.com/hfreire/random-http-useragent/actions?workflow=ci)
 [![Coverage Status](https://coveralls.io/repos/github/hfreire/random-http-useragent/badge.svg?branch=master)](https://coveralls.io/github/hfreire/random-http-useragent?branch=master)
 [![](https://img.shields.io/github/release/hfreire/random-http-useragent.svg)](https://github.com/hfreire/random-http-useragent/releases)
 [![Version](https://img.shields.io/npm/v/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent)
-[![Downloads](https://img.shields.io/npm/dt/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent) 
+[![Downloads](https://img.shields.io/npm/dt/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent)
 
 > Stores and randomly accesses a HTTP user agent from an available list of user agents in disk.
 
 ### Features
-* Randomly :zap: pick between 899 unique user agents :white_check_mark: 
-* HTTP user agents are stored :floppy_disk: in a disk file to avoid filling up your app's memory space :white_check_mark:  
+* Randomly :zap: pick between 899 unique user agents :white_check_mark:
+* HTTP user agents are stored :floppy_disk: in a disk file to avoid filling up your app's memory space :white_check_mark:
 * File disk reads are optimized :running: to only read as much as needed :white_check_mark:
 * Cache results using [memoizee](https://github.com/medikoo/memoizee) :white_check_mark:
 * Supports [Bluebird](https://github.com/petkaantonov/bluebird) :bird: promises :white_check_mark:
@@ -49,7 +49,7 @@ RandomHttpUserAgent.get()
 ```
 
 ### How to contribute
-You can contribute either with code (e.g., new features, bug fixes and documentation) or by [donating 5 EUR](https://paypal.me/hfreire/5). You can read the [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute with code. 
+You can contribute either with code (e.g., new features, bug fixes and documentation) or by [donating 5 EUR](https://paypal.me/hfreire/5). You can read the [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute with code.
 
 All donation proceedings will go to the [Sverige för UNHCR](https://sverigeforunhcr.se), a swedish partner of the [UNHCR - The UN Refugee Agency](http://www.unhcr.org), a global organisation dedicated to saving lives, protecting rights and building a better future for refugees, forcibly displaced communities and stateless people.
 
