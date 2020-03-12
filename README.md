@@ -2,6 +2,7 @@
 
 [![](https://github.com/hfreire/random-http-useragent/workflows/ci/badge.svg)](https://github.com/hfreire/random-http-useragent/actions?workflow=ci)
 [![Coverage Status](https://coveralls.io/repos/github/hfreire/random-http-useragent/badge.svg?branch=master)](https://coveralls.io/github/hfreire/random-http-useragent?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/hfreire/random-http-useragent/badge.svg)](https://snyk.io/test/github/hfreire/random-http-useragent)
 [![](https://img.shields.io/github/release/hfreire/random-http-useragent.svg)](https://github.com/hfreire/random-http-useragent/releases)
 [![Version](https://img.shields.io/npm/v/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent)
 [![Downloads](https://img.shields.io/npm/dt/random-http-useragent.svg)](https://www.npmjs.com/package/random-http-useragent)
