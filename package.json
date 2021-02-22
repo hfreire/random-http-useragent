@@ -21,7 +21,7 @@
   "homepage": "https://github.com/hfreire/random-http-useragent#readme",
   "dependencies": {
     "bluebird": "3.7.2",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "memoizee": "0.4.15"
   },
   "devDependencies": {
